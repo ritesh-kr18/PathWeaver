@@ -1,0 +1,464 @@
+{
+  "meta": {
+    "version": "1.0",
+    "stages": ["childhood", "school", "college", "career", "family", "retirement"],
+    "scenariosPerStage": 3
+  },
+  "nodes": {
+    "childhood_1": {
+      "stage": "childhood",
+      "title": "After-School Activity",
+      "text": "Your teacher announces that everyone must choose an after-school activity. Your friends are excited and pulling you in different directions. This is the first big choice you remember making on your own.",
+      "choices": [
+        {
+          "id": "ch1_a",
+          "text": "Join the science club — build rockets and do experiments",
+          "effects": { "career": 5, "knowledge": 6, "happiness": 2, "health": 0, "finance": 0, "relationships": -1 },
+          "consequence": "You spend your afternoons surrounded by test tubes and curiosity. Your experiments don't always work, but your mind lights up every time something unexpected happens. You've discovered the joy of learning."
+        },
+        {
+          "id": "ch1_b",
+          "text": "Join the sports team — play football with your friends",
+          "effects": { "health": 7, "relationships": 5, "happiness": 4, "career": 0, "finance": 0, "knowledge": -1 },
+          "consequence": "The training is tough, but the friendships you make on the field feel unbreakable. You learn about teamwork, discipline, and pushing through the pain of a lost match."
+        },
+        {
+          "id": "ch1_c",
+          "text": "Go home and play video games instead",
+          "effects": { "happiness": 3, "health": -3, "relationships": -3, "career": 0, "finance": 0, "knowledge": 1 },
+          "consequence": "The virtual worlds are exciting and you become surprisingly good at strategy games. But when you look up, hours have passed and your friends are busy with their clubs."
+        }
+      ]
+    },
+    "childhood_2": {
+      "stage": "childhood",
+      "title": "The School Project",
+      "text": "Your class has been assigned a group project about the environment. You've been chosen as the team leader. Your teammates have different ideas about how to present it, and the deadline is next week.",
+      "choices": [
+        {
+          "id": "ch2_a",
+          "text": "Take charge and organize everyone — assign tasks and deadlines",
+          "effects": { "career": 6, "relationships": 3, "knowledge": 3, "happiness": 1, "health": 0, "finance": 0 },
+          "consequence": "It's stressful being the leader, but your team finishes early with an amazing presentation. Your teacher calls it the best in class. You feel a surge of pride."
+        },
+        {
+          "id": "ch2_b",
+          "text": "Do most of the work yourself to make sure it's perfect",
+          "effects": { "knowledge": 7, "career": 3, "health": -3, "relationships": -4, "happiness": -1, "finance": 0 },
+          "consequence": "The project turns out excellent, but you stayed up way too late and your teammates feel left out. You got the grade but lost some trust."
+        },
+        {
+          "id": "ch2_c",
+          "text": "Suggest a fun creative approach — make a play instead of a poster",
+          "effects": { "happiness": 6, "relationships": 5, "knowledge": 2, "career": 1, "health": 0, "finance": 0 },
+          "consequence": "Everyone loves the idea! The play is hilarious and informative. The whole class laughs and learns. Your teacher gives bonus points for creativity."
+        }
+      ]
+    },
+    "childhood_3": {
+      "stage": "childhood",
+      "title": "The Bully Problem",
+      "text": "A bigger kid has been picking on your friend during lunch breaks. Today, they took your friend's lunch money. You see it happen and your heart is racing. Other kids are watching to see what you'll do.",
+      "choices": [
+        {
+          "id": "ch3_a",
+          "text": "Stand up to the bully and tell them to stop",
+          "effects": { "relationships": 6, "happiness": 4, "health": -2, "career": 2, "finance": 0, "knowledge": 0 },
+          "consequence": "Your voice shakes but you stand firm. The bully is surprised and backs off. Your friend looks at you like a hero. The other kids start clapping. You learn that courage isn't the absence of fear."
+        },
+        {
+          "id": "ch3_b",
+          "text": "Tell a teacher about what happened",
+          "effects": { "knowledge": 3, "career": 2, "relationships": 1, "happiness": 1, "health": 0, "finance": 0 },
+          "consequence": "The teacher handles the situation quickly. The bully gets a warning and has to apologize. Some kids call you a snitch, but your friend is safe and grateful."
+        },
+        {
+          "id": "ch3_c",
+          "text": "Stay quiet — you don't want to get involved",
+          "effects": { "happiness": -4, "relationships": -5, "health": 1, "career": 0, "finance": 0, "knowledge": 0 },
+          "consequence": "You feel safe but something heavy sits in your chest all day. Your friend eats alone at lunch and doesn't talk to you for a week. You wish you had been braver."
+        }
+      ]
+    },
+
+    "school_1": {
+      "stage": "school",
+      "title": "The Exam Dilemma",
+      "text": "Your board exams are next month and you're behind on preparation. Your friend invites you to a weekend trip that all your classmates are going on. You know this might be the last trip before exams.",
+      "choices": [
+        {
+          "id": "sc1_a",
+          "text": "Skip the trip and create a study schedule",
+          "effects": { "career": 6, "knowledge": 7, "happiness": -3, "relationships": -4, "health": -1, "finance": 0 },
+          "consequence": "While your friends post fun photos, you power through 3 chapters of physics. It's lonely, but by Monday you feel more prepared than ever. Your confidence grows."
+        },
+        {
+          "id": "sc1_b",
+          "text": "Go on the trip but study on the bus and at night",
+          "effects": { "happiness": 4, "relationships": 4, "knowledge": 2, "career": 1, "health": -1, "finance": -2 },
+          "consequence": "You manage to have fun AND review your notes. You don't cover as much as planned, but the memories with friends recharge your motivation to study harder when you get back."
+        },
+        {
+          "id": "sc1_c",
+          "text": "Go on the trip and forget about studying for the weekend",
+          "effects": { "happiness": 6, "relationships": 6, "knowledge": -4, "career": -3, "health": 2, "finance": -2 },
+          "consequence": "It's the best weekend of your life! Campfires, inside jokes, and unforgettable moments. But Monday morning hits hard when you realize how much catching up you need to do."
+        }
+      ]
+    },
+    "school_2": {
+      "stage": "school",
+      "title": "Choosing Your Stream",
+      "text": "It's time to choose between Science, Commerce, and Arts for your next academic year. Your parents want you to take Science, your heart says Arts, and your practical mind whispers Commerce.",
+      "choices": [
+        {
+          "id": "sc2_a",
+          "text": "Choose Science — keep the most doors open",
+          "effects": { "career": 6, "knowledge": 5, "happiness": -2, "relationships": 0, "health": -2, "finance": 2 },
+          "consequence": "The coursework is demanding, and physics sometimes makes you want to cry. But the problem-solving skills you develop are invaluable, and you gain respect from peers and teachers."
+        },
+        {
+          "id": "sc2_b",
+          "text": "Follow your heart and choose Arts",
+          "effects": { "happiness": 7, "knowledge": 4, "relationships": 3, "career": -2, "health": 1, "finance": -2 },
+          "consequence": "Literature, history, and creative expression light a fire in you. Your parents are concerned, but you've never felt more alive in a classroom. You start writing and it feels like breathing."
+        },
+        {
+          "id": "sc2_c",
+          "text": "Choose Commerce — balance between practical and interesting",
+          "effects": { "finance": 6, "career": 4, "knowledge": 3, "happiness": 1, "health": 0, "relationships": 0 },
+          "consequence": "Accounting and economics are surprisingly fascinating. You learn how money works, how businesses think, and start seeing the world through a commercial lens."
+        }
+      ]
+    },
+    "school_3": {
+      "stage": "school",
+      "title": "The Peer Pressure Moment",
+      "text": "Your popular friends invite you to skip school and hang out at the mall. They say everyone cool does it. You've never broken rules before, and tomorrow is just a regular school day — nothing important.",
+      "choices": [
+        {
+          "id": "sc3_a",
+          "text": "Politely decline and go to class",
+          "effects": { "career": 3, "knowledge": 3, "health": 1, "happiness": -2, "relationships": -3, "finance": 0 },
+          "consequence": "Your friends tease you for being a 'nerd' but you know you made the right call. In class, the teacher covers a topic that ends up being 20% of the final exam."
+        },
+        {
+          "id": "sc3_b",
+          "text": "Join them — one day won't hurt",
+          "effects": { "happiness": 5, "relationships": 5, "career": -3, "knowledge": -2, "health": 0, "finance": -3 },
+          "consequence": "It's actually a blast — you laugh until your stomach hurts. But your parents find out from the school's absence report, and you're grounded for two weeks."
+        },
+        {
+          "id": "sc3_c",
+          "text": "Suggest a compromise — hang out after school instead",
+          "effects": { "relationships": 4, "happiness": 3, "career": 1, "knowledge": 1, "health": 0, "finance": -1 },
+          "consequence": "Some friends agree, others go anyway. You attend class AND get to hang out. You learn that you can set boundaries without losing friends."
+        }
+      ]
+    },
+
+    "college_1": {
+      "stage": "college",
+      "title": "The Internship vs Startup",
+      "text": "You're in your second year of college. A prestigious company offers you a summer internship with a stipend. At the same time, your brilliant roommate pitches a startup idea and wants you as co-founder. You can only choose one.",
+      "choices": [
+        {
+          "id": "co1_a",
+          "text": "Take the corporate internship — stable, good for resume",
+          "effects": { "career": 7, "finance": 5, "knowledge": 3, "happiness": 1, "relationships": -2, "health": -1 },
+          "consequence": "The internship is structured and professional. You learn corporate culture, build your resume, and earn decent money. But you wonder what could have been with the startup."
+        },
+        {
+          "id": "co1_b",
+          "text": "Join the startup — high risk, high potential",
+          "effects": { "career": 3, "knowledge": 6, "happiness": 5, "finance": -4, "health": -2, "relationships": 4 },
+          "consequence": "Late nights coding in the dorm room, eating instant noodles, and dreaming big. The startup hasn't made money yet, but you've learned more in 3 months than in 2 years of classes."
+        },
+        {
+          "id": "co1_c",
+          "text": "Do the internship part-time and help the startup on weekends",
+          "effects": { "career": 4, "knowledge": 5, "health": -5, "happiness": 0, "finance": 2, "relationships": 2 },
+          "consequence": "You're exhausted and running on coffee, but you're gaining experience on both fronts. Your sleep suffers terribly, but your skills are growing exponentially."
+        }
+      ]
+    },
+    "college_2": {
+      "stage": "college",
+      "title": "The Social Circle",
+      "text": "College life is busy and you need to decide how to spend your limited free time. Three groups want your involvement: the coding club (technical skills), the drama society (creative expression), or the student council (leadership).",
+      "choices": [
+        {
+          "id": "co2_a",
+          "text": "Join the coding club — build projects and learn tech",
+          "effects": { "knowledge": 7, "career": 5, "finance": 2, "happiness": 2, "relationships": -1, "health": -2 },
+          "consequence": "You build 3 apps, win a hackathon, and your GitHub profile starts getting attention. Late-night coding sessions become your new normal. You feel capable and skilled."
+        },
+        {
+          "id": "co2_b",
+          "text": "Join the drama society — express yourself creatively",
+          "effects": { "happiness": 7, "relationships": 6, "knowledge": 2, "career": 0, "health": 1, "finance": -1 },
+          "consequence": "Performing on stage terrifies and thrills you. You make deep friendships, find your voice, and discover talents you didn't know you had. The standing ovation after your first play changes you."
+        },
+        {
+          "id": "co2_c",
+          "text": "Join the student council — develop leadership skills",
+          "effects": { "career": 6, "relationships": 5, "knowledge": 2, "happiness": 1, "health": -1, "finance": 1 },
+          "consequence": "Organizing events, mediating conflicts, and representing students teaches you diplomacy and leadership. You build a network that will last well beyond college."
+        }
+      ]
+    },
+    "college_3": {
+      "stage": "college",
+      "title": "The Semester Abroad",
+      "text": "You receive an opportunity to study abroad for one semester. It would be an incredible experience, but it means leaving your friends, your current research project, and spending your savings.",
+      "choices": [
+        {
+          "id": "co3_a",
+          "text": "Go abroad — it's a once-in-a-lifetime opportunity",
+          "effects": { "knowledge": 6, "happiness": 6, "relationships": -3, "finance": -6, "career": 3, "health": 2 },
+          "consequence": "Living in a new country opens your mind in ways you never expected. You meet people from around the world, try food that changes your taste buds, and return a different person."
+        },
+        {
+          "id": "co3_b",
+          "text": "Stay and focus on your research project",
+          "effects": { "career": 7, "knowledge": 5, "finance": 2, "happiness": -2, "relationships": 2, "health": 0 },
+          "consequence": "Your research gets published in a student journal! Your professor offers to mentor you for grad school. You feel accomplished, even as you see your friends' travel photos."
+        },
+        {
+          "id": "co3_c",
+          "text": "Defer to next semester and save more money first",
+          "effects": { "finance": 4, "career": 2, "knowledge": 1, "happiness": -1, "relationships": 2, "health": 1 },
+          "consequence": "Smart financial planning gives you peace of mind. You save up, prepare better, and the extra semester of preparation means you'll be more ready for the cultural experience."
+        }
+      ]
+    },
+
+    "career_1": {
+      "stage": "career",
+      "title": "The Job Offer",
+      "text": "Fresh out of college, you have three job offers on the table. A well-paying corporate position at a big firm, a lower-paying role at an exciting startup, or a government job with great stability and benefits.",
+      "choices": [
+        {
+          "id": "ca1_a",
+          "text": "Take the corporate job — highest salary and brand name",
+          "effects": { "finance": 8, "career": 6, "happiness": -2, "health": -3, "relationships": -2, "knowledge": 2 },
+          "consequence": "The salary is impressive and your parents are proud. But the 60-hour work weeks start to blur together. You buy nice things but have no time to enjoy them."
+        },
+        {
+          "id": "ca1_b",
+          "text": "Join the startup — exciting culture and growth potential",
+          "effects": { "happiness": 6, "career": 4, "knowledge": 5, "finance": -3, "health": -2, "relationships": 3 },
+          "consequence": "The startup is chaotic and thrilling. You wear multiple hats, learn new skills daily, and feel genuinely excited about Monday mornings. Money is tight, but fulfillment is high."
+        },
+        {
+          "id": "ca1_c",
+          "text": "Take the government job — stability and work-life balance",
+          "effects": { "health": 5, "finance": 4, "relationships": 4, "happiness": 3, "career": -2, "knowledge": -1 },
+          "consequence": "You leave work at 5 PM every day. You have time for hobbies, relationships, and sleep. Career growth is slow, but your quality of life is genuinely good."
+        }
+      ]
+    },
+    "career_2": {
+      "stage": "career",
+      "title": "The Promotion Dilemma",
+      "text": "After 3 years of hard work, you're offered a promotion to management. More money and prestige, but it means managing people instead of doing the work you love. Also, the new role requires relocating to a different city.",
+      "choices": [
+        {
+          "id": "ca2_a",
+          "text": "Accept the promotion and relocate",
+          "effects": { "career": 8, "finance": 6, "relationships": -5, "happiness": -1, "health": -2, "knowledge": 2 },
+          "consequence": "The new title feels great on your LinkedIn profile. But in the new city, you're starting social life from scratch. Management is harder than you thought — people are complex."
+        },
+        {
+          "id": "ca2_b",
+          "text": "Negotiate to stay in your current city with the new role",
+          "effects": { "career": 5, "finance": 4, "relationships": 2, "happiness": 3, "health": 0, "knowledge": 1 },
+          "consequence": "Your boss respects your negotiation skills and agrees to a hybrid arrangement. You get the promotion without losing your community. Work-life balance stays manageable."
+        },
+        {
+          "id": "ca2_c",
+          "text": "Decline the promotion — stay in the role you love",
+          "effects": { "happiness": 6, "health": 3, "relationships": 3, "career": -4, "finance": -2, "knowledge": 3 },
+          "consequence": "Your manager is surprised but respects your decision. You continue doing excellent technical work and become the go-to expert. Money isn't growing, but neither is your stress."
+        }
+      ]
+    },
+    "career_3": {
+      "stage": "career",
+      "title": "The Side Hustle",
+      "text": "You've been developing a side project in your evenings — a product that could become a real business. It's gaining traction with early users. You could go all-in, keep it as a hobby, or sell the idea.",
+      "choices": [
+        {
+          "id": "ca3_a",
+          "text": "Quit your job and go all-in on the side project",
+          "effects": { "career": 4, "happiness": 5, "finance": -6, "knowledge": 5, "health": -3, "relationships": -2 },
+          "consequence": "The leap of faith is terrifying. No steady paycheck, but you're building something that's truly yours. The freedom is intoxicating and the stress is real."
+        },
+        {
+          "id": "ca3_b",
+          "text": "Keep it as a side hustle — grow it gradually",
+          "effects": { "finance": 3, "career": 2, "knowledge": 3, "health": -3, "happiness": 2, "relationships": -1 },
+          "consequence": "The slow and steady approach works. You maintain stability while growing the project. It's exhausting running two things, but the extra income is nice."
+        },
+        {
+          "id": "ca3_c",
+          "text": "Sell the project to a bigger company",
+          "effects": { "finance": 8, "happiness": -2, "career": 2, "knowledge": 0, "health": 1, "relationships": 1 },
+          "consequence": "The sale brings in a nice sum — enough for a down payment on a house. But watching someone else run your creation feels bittersweet. You wonder if you sold too early."
+        }
+      ]
+    },
+
+    "family_1": {
+      "stage": "family",
+      "title": "The Big Commitment",
+      "text": "Your partner of 4 years asks about getting married and settling down. You love each other, but you also have ambitious career goals and a travel bucket list. Friends your age are split — some married, some saying there's no rush.",
+      "choices": [
+        {
+          "id": "fa1_a",
+          "text": "Say yes — build a life together now",
+          "effects": { "relationships": 8, "happiness": 5, "finance": -4, "career": -2, "health": 1, "knowledge": 0 },
+          "consequence": "The wedding is beautiful and your families are overjoyed. Having a partner to share everything with makes life richer. Financial pressures increase, but you face them together."
+        },
+        {
+          "id": "fa1_b",
+          "text": "Ask to wait 2 more years — achieve some goals first",
+          "effects": { "career": 5, "finance": 4, "relationships": -3, "happiness": -1, "health": 0, "knowledge": 2 },
+          "consequence": "Your partner is disappointed but understands. You use the time to advance your career and save money. The relationship is tested by the delay, but your goals are being met."
+        },
+        {
+          "id": "fa1_c",
+          "text": "Suggest living together first before marriage",
+          "effects": { "relationships": 3, "happiness": 4, "finance": 2, "career": 1, "health": 1, "knowledge": 1 },
+          "consequence": "Moving in together is a mini-adventure. You learn each other's quirks — the toothpaste cap debate, the thermostat wars. It strengthens your bond and gives you both clarity."
+        }
+      ]
+    },
+    "family_2": {
+      "stage": "family",
+      "title": "The Parenting Decision",
+      "text": "Your family is growing and you're thinking about how to raise your children. Your job demands long hours, your partner wants to go back to school, and daycare is expensive. Something has to give.",
+      "choices": [
+        {
+          "id": "fa2_a",
+          "text": "Cut back to part-time work and focus on parenting",
+          "effects": { "relationships": 7, "happiness": 5, "health": 3, "finance": -6, "career": -5, "knowledge": 0 },
+          "consequence": "You witness every first — first word, first step, first day of school. The financial sacrifice is real, but your bond with your children is unbreakable. No one can take these memories."
+        },
+        {
+          "id": "fa2_b",
+          "text": "Both work full-time and hire a nanny",
+          "effects": { "finance": 5, "career": 5, "relationships": -3, "happiness": -2, "health": -2, "knowledge": 1 },
+          "consequence": "The dual income keeps the family comfortable and your careers advance. But guilt creeps in when your child says the nanny's name before yours at bedtime."
+        },
+        {
+          "id": "fa2_c",
+          "text": "Alternate schedules — one parent always home",
+          "effects": { "relationships": 4, "happiness": 3, "health": -2, "career": -1, "finance": 1, "knowledge": 1 },
+          "consequence": "The tag-team approach works better than expected. You and your partner rarely overlap, but the children always have a parent present. Communication becomes your superpower."
+        }
+      ]
+    },
+    "family_3": {
+      "stage": "family",
+      "title": "The Financial Crossroads",
+      "text": "You receive an unexpected inheritance. It's enough to either pay off your mortgage, invest in the stock market for long-term growth, or fund your child's education savings. Each has different implications for your family's future.",
+      "choices": [
+        {
+          "id": "fa3_a",
+          "text": "Pay off the mortgage — eliminate the biggest monthly expense",
+          "effects": { "finance": 7, "happiness": 5, "health": 3, "relationships": 2, "career": 0, "knowledge": 0 },
+          "consequence": "The relief of being debt-free is indescribable. Monthly pressure evaporates. You sleep better, argue less about money, and can afford small luxuries guilt-free."
+        },
+        {
+          "id": "fa3_b",
+          "text": "Invest in the market — let compound interest work",
+          "effects": { "finance": 4, "knowledge": 4, "career": 1, "happiness": 0, "health": -1, "relationships": -1 },
+          "consequence": "The investments grow steadily over the years. You become financially savvy and start teaching your children about money. The market's ups and downs test your nerves though."
+        },
+        {
+          "id": "fa3_c",
+          "text": "Create an education fund for your children",
+          "effects": { "relationships": 6, "happiness": 4, "knowledge": 3, "finance": -2, "career": 0, "health": 0 },
+          "consequence": "When your children get accepted to their dream universities, the fund is ready. They start their adult lives without the burden of student debt. They'll remember this gift forever."
+        }
+      ]
+    },
+
+    "retirement_1": {
+      "stage": "retirement",
+      "title": "The New Chapter",
+      "text": "You've officially retired. For the first time in decades, Monday mornings are yours. Some people dread the emptiness of retirement; you see it as a blank canvas. What will you paint on it?",
+      "choices": [
+        {
+          "id": "re1_a",
+          "text": "Start mentoring young professionals in your field",
+          "effects": { "relationships": 6, "happiness": 6, "knowledge": 3, "career": 3, "health": 1, "finance": 0 },
+          "consequence": "Watching young people succeed with your guidance gives you a profound sense of purpose. You realize wisdom is the one thing that grows by sharing it."
+        },
+        {
+          "id": "re1_b",
+          "text": "Travel the world — check off your bucket list",
+          "effects": { "happiness": 8, "knowledge": 5, "health": 2, "finance": -6, "relationships": -1, "career": 0 },
+          "consequence": "From the temples of Kyoto to the streets of Rome, every destination reshapes your understanding of life. Your photo albums become your most treasured possessions."
+        },
+        {
+          "id": "re1_c",
+          "text": "Start a community garden project in your neighborhood",
+          "effects": { "health": 6, "relationships": 6, "happiness": 5, "knowledge": 2, "finance": -2, "career": 0 },
+          "consequence": "Dirt under your fingernails and neighbors becoming friends. The garden becomes the heart of the community. Children learn where food comes from, and you learn that purpose grows in soil."
+        }
+      ]
+    },
+    "retirement_2": {
+      "stage": "retirement",
+      "title": "The Health Wake-Up Call",
+      "text": "A routine health checkup reveals that your blood pressure and cholesterol are higher than they should be. The doctor says lifestyle changes are needed. You've been putting your health second for years.",
+      "choices": [
+        {
+          "id": "re2_a",
+          "text": "Commit to daily exercise and a complete diet overhaul",
+          "effects": { "health": 9, "happiness": 3, "finance": -2, "relationships": 1, "career": 0, "knowledge": 2 },
+          "consequence": "The first month is brutal. Your body protests every morning walk and every salad. But by month three, you feel 10 years younger. Your grandchildren can barely keep up with you."
+        },
+        {
+          "id": "re2_b",
+          "text": "Take the medication and make moderate lifestyle changes",
+          "effects": { "health": 5, "happiness": 2, "finance": -3, "knowledge": 1, "relationships": 0, "career": 0 },
+          "consequence": "The pills help stabilize things quickly. You make some dietary changes but don't overhaul everything. It's a pragmatic approach — not perfect, but sustainable."
+        },
+        {
+          "id": "re2_c",
+          "text": "Join a seniors' yoga and meditation class",
+          "effects": { "health": 6, "happiness": 6, "relationships": 4, "knowledge": 3, "finance": -1, "career": 0 },
+          "consequence": "The combination of gentle movement and mindfulness transforms your wellbeing. You sleep better, stress less, and make friends who share your journey toward better health."
+        }
+      ]
+    },
+    "retirement_3": {
+      "stage": "retirement",
+      "title": "The Legacy Question",
+      "text": "You're writing your will and thinking about what legacy you want to leave. It's not just about money — it's about values, memories, and impact. Your family gathers to discuss the future.",
+      "choices": [
+        {
+          "id": "re3_a",
+          "text": "Set up a scholarship fund in your name",
+          "effects": { "career": 4, "knowledge": 5, "happiness": 6, "relationships": 3, "finance": -5, "health": 1 },
+          "consequence": "The scholarship helps students who remind you of your younger self. Every year, you receive thank-you letters that make you weep with joy. Your impact outlives your physical presence."
+        },
+        {
+          "id": "re3_b",
+          "text": "Write a memoir — document your life story for future generations",
+          "effects": { "happiness": 7, "knowledge": 4, "relationships": 5, "health": 2, "career": 1, "finance": -1 },
+          "consequence": "The process of writing is therapeutic. You rediscover forgotten memories and understand your life's arc in ways you never expected. Your grandchildren treasure every page."
+        },
+        {
+          "id": "re3_c",
+          "text": "Divide everything equally among family and enjoy the present",
+          "effects": { "relationships": 6, "happiness": 5, "finance": -3, "health": 3, "career": 0, "knowledge": 0 },
+          "consequence": "Your family feels loved and valued equally. You spend your remaining years doing exactly what brings you joy, without the weight of planning for eternity. Living well is the best legacy."
+        }
+      ]
+    }
+  }
+}
