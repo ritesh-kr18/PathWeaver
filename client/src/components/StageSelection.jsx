@@ -16,8 +16,12 @@ export default function StageSelection() {
   const { setStartingStage } = useJourney();
 
   const handleSelect = (stage) => {
+    // Play voice clip for the selected stage
+    const audio = new Audio(`/assets/audio/voice/${stage}.m4a`);
+    audio.play().catch(e => console.log('Audio play failed:', e));
+    
     setStartingStage(stage);
-    navigate('/play');
+    setTimeout(() => navigate('/stage-intro'), 300); // Go to animation video first
   };
 
   return (
@@ -34,7 +38,7 @@ export default function StageSelection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-500 text-center mb-10"
+          className="text-slate-500 text-center mb-10"
         >
           Choose where your journey begins
         </motion.p>
@@ -49,13 +53,13 @@ export default function StageSelection() {
               whileHover={{ scale: 1.03, y: -4 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleSelect(stage)}
-              className="bg-gray-900/80 border border-gray-800 hover:border-purple-500/50 rounded-2xl p-6 text-left transition-all group"
+              className="bg-white/90 shadow-xl shadow-purple-500/5 border border-slate-200 hover:border-purple-500/50 rounded-2xl p-6 text-left transition-all group"
             >
               <span className="text-4xl block mb-3">{STAGE_ICONS[stage]}</span>
-              <h3 className="text-lg font-semibold text-white group-hover:text-purple-400 transition">
+              <h3 className="text-lg font-semibold text-slate-900 group-hover:text-purple-400 transition">
                 {STAGE_LABELS[stage]}
               </h3>
-              <p className="text-sm text-gray-500 mt-2">{STAGE_DESCRIPTIONS[stage]}</p>
+              <p className="text-sm text-slate-500 mt-2">{STAGE_DESCRIPTIONS[stage]}</p>
             </motion.button>
           ))}
         </div>
@@ -73,7 +77,7 @@ export default function StageSelection() {
           >
             <span className="text-4xl block mb-2">🌟</span>
             <h3 className="text-xl font-bold text-purple-400">Explore Full Journey</h3>
-            <p className="text-sm text-gray-400 mt-1">Experience every life stage from childhood to retirement</p>
+            <p className="text-sm text-slate-600 mt-1">Experience every life stage from childhood to retirement</p>
           </button>
         </motion.div>
       </div>

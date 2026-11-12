@@ -22,11 +22,15 @@ export default function ConsequenceScene() {
 
   const handleContinue = () => {
     if (isJourneyComplete) {
+      const audio = new Audio('/assets/audio/success.wav');
+      audio.play().catch(e => console.log('Audio play failed:', e));
       navigate('/analysis');
     } else if (isStageComplete) {
-      advanceStage();
-      navigate('/play');
+      // Instead of advancing immediately, go to transition screen
+      navigate('/transition');
     } else {
+      const audio = new Audio('/assets/audio/click.wav');
+      audio.play().catch(e => console.log('Audio play failed:', e));
       navigate('/play');
     }
   };
@@ -60,9 +64,9 @@ export default function ConsequenceScene() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="bg-gray-900/80 border border-gray-800 rounded-2xl p-6 mb-8"
+          className="bg-white/90 shadow-xl shadow-purple-500/5 border border-slate-200 rounded-2xl p-6 mb-8"
         >
-          <p className="text-gray-300 text-lg leading-relaxed">{lastChoice.consequence}</p>
+          <p className="text-slate-700 text-lg leading-relaxed">{lastChoice.consequence}</p>
         </motion.div>
 
         {/* Score Changes */}
@@ -84,7 +88,7 @@ export default function ConsequenceScene() {
                   value > 0 ? 'border-green-500/30 bg-green-500/5' : 'border-red-500/30 bg-red-500/5'
                 }`}
               >
-                <span className="text-sm capitalize text-gray-400">{key}</span>
+                <span className="text-sm capitalize text-slate-600">{key}</span>
                 <span className={`font-bold ${value > 0 ? 'text-green-400' : 'text-red-400'}`}>
                   {value > 0 ? '+' : ''}{value}
                 </span>
@@ -117,7 +121,7 @@ export default function ConsequenceScene() {
           className="text-center"
         >
           <button onClick={handleContinue}
-            className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 rounded-xl text-lg font-semibold transition-all shadow-lg hover:shadow-purple-500/25">
+            className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 rounded-xl text-lg font-semibold transition-all shadow-lg hover:shadow-purple-500/25 text-white">
             {isJourneyComplete ? '📊 View Analysis' :
              isStageComplete ? 'Next Stage →' : 'Continue →'}
           </button>

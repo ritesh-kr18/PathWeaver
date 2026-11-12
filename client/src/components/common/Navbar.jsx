@@ -9,7 +9,7 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -60 }}
       animate={{ y: 0 }}
-      className="bg-gray-900/80 backdrop-blur-md border-b border-gray-800 px-6 py-3 flex items-center justify-between sticky top-0 z-50"
+      className="bg-white/90 shadow-xl shadow-purple-500/5 backdrop-blur-md border-b border-slate-200 px-6 py-3 flex items-center justify-between sticky top-0 z-50"
     >
       <Link to="/" className="flex items-center gap-2">
         <span className="text-2xl">🌐</span>
@@ -19,15 +19,14 @@ export default function Navbar() {
       </Link>
 
       <div className="flex items-center gap-4">
-        <Link to="/leaderboard" className="text-gray-400 hover:text-white transition text-sm">
-          Leaderboard
-        </Link>
-
         {isAuthenticated ? (
           <div className="flex items-center gap-3">
-            <span className="text-sm text-gray-400">Hi, {user?.name}</span>
+            <span className="text-sm text-slate-600">Hi, {user?.name}</span>
             <button
-              onClick={logout}
+              onClick={() => {
+                logout();
+                window.location.href = '/login';
+              }}
               className="text-sm text-red-400 hover:text-red-300 transition"
             >
               Logout
@@ -35,8 +34,8 @@ export default function Navbar() {
           </div>
         ) : (
           <div className="flex items-center gap-2">
-            <Link to="/login" className="text-sm text-gray-400 hover:text-white transition">Login</Link>
-            <Link to="/register" className="text-sm bg-purple-600 hover:bg-purple-500 px-3 py-1 rounded-lg transition">
+            <Link to="/login" className="text-sm text-slate-600 hover:text-slate-900 transition">Login</Link>
+            <Link to="/register" className="text-sm bg-purple-600 hover:bg-purple-500 px-3 py-1 rounded-lg transition text-white">
               Register
             </Link>
           </div>

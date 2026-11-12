@@ -49,6 +49,9 @@ export default function StoryScreen() {
   };
 
   const handleDecision = (choice) => {
+    const audio = new Audio('/assets/audio/click.wav');
+    audio.play().catch(e => console.log('Audio play failed:', e));
+    
     makeDecision(choice, currentScenario?.title);
     navigate('/consequence');
   };
@@ -58,19 +61,21 @@ export default function StoryScreen() {
   return (
     <div className="min-h-[calc(100vh-60px)] flex">
       {/* Timeline Sidebar */}
-      <div className="hidden md:block w-64 bg-gray-900/50 border-r border-gray-800 p-4 overflow-y-auto">
+      <div className="hidden md:block w-64 bg-white/60 border-r border-slate-200 p-4 overflow-y-auto">
         <Timeline currentStage={currentStage} exploredStages={exploredStages} startingStage={startingStage} />
 
         {/* Score preview */}
-        <div className="mt-6 pt-4 border-t border-gray-800">
-          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Scores</h3>
-          {Object.entries(scores).map(([key, value]) => (
+        <div className="mt-6 pt-4 border-t border-slate-200">
+          <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Scores</h3>
+          {Object.entries(scores)
+            .filter(([key]) => !(key === 'relationships' && ['childhood', 'school', 'college'].includes(currentStage)))
+            .map(([key, value]) => (
             <div key={key} className="mb-2">
-              <div className="flex justify-between text-xs text-gray-400 mb-1">
+              <div className="flex justify-between text-xs text-slate-600 mb-1">
                 <span className="capitalize">{key}</span>
                 <span>{value}%</span>
               </div>
-              <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
+              <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
                 <motion.div
                   className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"
                   initial={{ width: 0 }}
@@ -103,7 +108,7 @@ export default function StoryScreen() {
         ) : error ? (
           <div className="text-center py-20">
             <p className="text-red-400 mb-4">{error}</p>
-            <button onClick={loadScenario} className="px-6 py-2 bg-purple-600 rounded-lg hover:bg-purple-500 transition">
+            <button onClick={loadScenario} className="px-6 py-2 bg-purple-600 rounded-lg hover:bg-purple-500 transition text-white">
               Retry
             </button>
           </div>
@@ -113,12 +118,12 @@ export default function StoryScreen() {
             <h2 className="text-2xl md:text-3xl font-bold mb-4">{currentScenario.title}</h2>
 
             {/* Scenario Description */}
-            <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-6 mb-8">
-              <p className="text-gray-300 text-lg leading-relaxed">{currentScenario.text}</p>
+            <div className="bg-white/80 shadow-lg border border-slate-200 rounded-xl p-6 mb-8">
+              <p className="text-slate-700 text-lg leading-relaxed">{currentScenario.text}</p>
             </div>
 
             {/* Decision Buttons */}
-            <h3 className="text-sm text-gray-500 uppercase tracking-wider mb-4">What will you do?</h3>
+            <h3 className="text-sm text-slate-500 uppercase tracking-wider mb-4">What will you do?</h3>
             <div className="space-y-3">
               {currentScenario.choices?.map((choice, i) => (
                 <motion.button
@@ -129,13 +134,13 @@ export default function StoryScreen() {
                   whileHover={{ scale: 1.02, x: 8 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleDecision(choice)}
-                  className="w-full text-left bg-gray-900/80 border border-gray-700 hover:border-purple-500/50 rounded-xl p-5 transition-all group"
+                  className="w-full text-left bg-white/90 shadow-xl shadow-purple-500/5 border border-slate-300 hover:border-purple-500/50 rounded-xl p-5 transition-all group"
                 >
                   <div className="flex items-start gap-3">
-                    <span className="bg-gray-800 group-hover:bg-purple-500/20 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-gray-400 group-hover:text-purple-400 transition shrink-0">
+                    <span className="bg-slate-100 group-hover:bg-purple-500/20 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-slate-600 group-hover:text-purple-400 transition shrink-0">
                       {String.fromCharCode(65 + i)}
                     </span>
-                    <span className="text-gray-300 group-hover:text-white transition">{choice.text}</span>
+                    <span className="text-slate-700 group-hover:text-slate-900 transition">{choice.text}</span>
                   </div>
                 </motion.button>
               ))}

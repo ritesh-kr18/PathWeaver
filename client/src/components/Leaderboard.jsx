@@ -34,7 +34,7 @@ export default function Leaderboard() {
       {/* Filter */}
       <div className="flex justify-center mb-6">
         <select value={filter} onChange={e => setFilter(e.target.value)}
-          className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-sm text-gray-300 focus:outline-none focus:border-purple-500">
+          className="bg-slate-100 border border-slate-300 rounded-lg px-4 py-2 text-sm text-slate-700 focus:outline-none focus:border-purple-500">
           <option value="">All Starting Stages</option>
           <option value="childhood">Childhood</option>
           <option value="school">School</option>
@@ -45,14 +45,14 @@ export default function Leaderboard() {
       </div>
 
       {loading ? (
-        <p className="text-gray-500 text-center py-20">Loading leaderboard...</p>
+        <p className="text-slate-500 text-center py-20">Loading leaderboard...</p>
       ) : scores.length === 0 ? (
-        <p className="text-gray-500 text-center py-20">No scores yet. Be the first to complete a journey!</p>
+        <p className="text-slate-500 text-center py-20">No scores yet. Be the first to complete a journey!</p>
       ) : (
-        <div className="bg-gray-900/80 border border-gray-800 rounded-2xl overflow-hidden">
+        <div className="bg-white/90 shadow-xl shadow-purple-500/5 border border-slate-200 rounded-2xl overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-gray-800 text-gray-500">
+              <tr className="border-b border-slate-200 text-slate-500">
                 <th className="px-4 py-3 text-left">#</th>
                 <th className="px-4 py-3 text-left">Player</th>
                 <th className="px-4 py-3 text-center">Total</th>
@@ -65,17 +65,17 @@ export default function Leaderboard() {
             </thead>
             <tbody>
               {scores.map((s, i) => (
-                <tr key={i} className="border-b border-gray-800/50 hover:bg-gray-800/30">
-                  <td className="px-4 py-3 font-bold text-gray-400">
+                <tr key={i} className="border-b border-slate-200/50 hover:bg-slate-100/50">
+                  <td className="px-4 py-3 font-bold text-slate-600">
                     {i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : i + 1}
                   </td>
                   <td className="px-4 py-3 font-medium">{s.userName || 'Anonymous'}</td>
                   <td className="px-4 py-3 text-center text-purple-400 font-bold">{s.totalScore}%</td>
-                  <td className="px-4 py-3 text-center hidden sm:table-cell text-gray-400">{s.career}</td>
-                  <td className="px-4 py-3 text-center hidden sm:table-cell text-gray-400">{s.health}</td>
-                  <td className="px-4 py-3 text-center hidden md:table-cell text-gray-400">{s.finance}</td>
-                  <td className="px-4 py-3 text-center hidden md:table-cell text-gray-400">{s.relationships}</td>
-                  <td className="px-4 py-3 text-center hidden md:table-cell text-gray-400">{s.happiness}</td>
+                  <td className="px-4 py-3 text-center hidden sm:table-cell text-slate-600">{s.career}</td>
+                  <td className="px-4 py-3 text-center hidden sm:table-cell text-slate-600">{s.health}</td>
+                  <td className="px-4 py-3 text-center hidden md:table-cell text-slate-600">{s.finance}</td>
+                  <td className="px-4 py-3 text-center hidden md:table-cell text-slate-600">{s.relationships}</td>
+                  <td className="px-4 py-3 text-center hidden md:table-cell text-slate-600">{s.happiness}</td>
                 </tr>
               ))}
             </tbody>

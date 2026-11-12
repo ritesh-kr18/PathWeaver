@@ -11,7 +11,7 @@ export default function LoadingSpinner({ message = 'Loading...' }) {
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="mt-4 text-gray-400 text-sm"
+        className="mt-4 text-slate-600 text-sm"
       >
         {message}
       </motion.p>

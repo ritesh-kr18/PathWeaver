@@ -17,7 +17,7 @@ export default function Timeline({ currentStage, exploredStages, startingStage }
     skipped: 'opacity-30',
     completed: 'border-green-500/50 bg-green-500/10',
     current: 'border-purple-500 bg-purple-500/10 ring-2 ring-purple-500/30',
-    upcoming: 'border-gray-700 opacity-50',
+    upcoming: 'border-slate-300 opacity-50',
   };
 
   const statusIcons = {
@@ -29,7 +29,7 @@ export default function Timeline({ currentStage, exploredStages, startingStage }
 
   return (
     <div className="space-y-2">
-      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Timeline</h3>
+      <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Timeline</h3>
       {STAGES.map((stage, i) => {
         const status = getStatus(stage);
         return (
@@ -43,7 +43,7 @@ export default function Timeline({ currentStage, exploredStages, startingStage }
             <span className="text-lg">{STAGE_ICONS[stage]}</span>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium truncate">{STAGE_LABELS[stage]}</p>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-slate-500">
                 {status === 'skipped' ? 'Not Explored' :
                  status === 'completed' ? 'Completed' :
                  status === 'current' ? 'In Progress' : 'Upcoming'}
