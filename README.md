@@ -48,19 +48,3 @@ cd ../client && npm install
 cp server/.env.example server/.env
 # Edit server/.env with your API keys
 ```
-
-### Running
-
-```bash
-# Terminal 1 — Start backend
-cd server && npm run dev
-
-# Terminal 2 — Start frontend
-cd client && npm run dev
-```
-
-## 👤 Author
-
-**Ritesh Kumar** (24CD3035)
-B.Tech — Computer Science & Design Engineering
-RGIPT
